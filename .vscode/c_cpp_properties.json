@@ -1,0 +1,59 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "Win32",
+            "compilerPath": "C:\\Users\\杨宝祥\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\bin\\avr-g++",
+            "compilerArgs": [
+                "-w",
+                "-std=gnu++11",
+                "-fpermissive",
+                "-fno-exceptions",
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-fno-threadsafe-statics",
+                "-Wno-error=narrowing"
+            ],
+            "intelliSenseMode": "gcc-x64",
+            "includePath": [
+                "C:/Users/杨宝祥/Documents/Arduino/libraries/**"
+            ],
+            "forcedInclude": [],
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "defines": [
+                "F_CPU=16000000L",
+                "ARDUINO=10816",
+                "ARDUINO_AVR_UNO",
+                "ARDUINO_ARCH_AVR",
+                "USBCON"
+            ]
+        },
+        {
+            "name": "Arduino",
+            "compilerPath": "C:\\Users\\鏉ㄥ疂绁\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\bin\\avr-g++",
+            "compilerArgs": [
+                "-w",
+                "-std=gnu++11",
+                "-fpermissive",
+                "-fno-exceptions",
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-fno-threadsafe-statics",
+                "-Wno-error=narrowing"
+            ],
+            "intelliSenseMode": "gcc-x64",
+            "includePath": [],
+            "forcedInclude": [],
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "defines": [
+                "F_CPU=16000000L",
+                "ARDUINO=10816",
+                "ARDUINO_AVR_UNO",
+                "ARDUINO_ARCH_AVR",
+                "USBCON"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "port": "COM8",
+    "board": "arduino:avr:uno",
+    "programmer": "arduino:avrispmkii",
+    "sketch": "nfc-signin.ino"
+}

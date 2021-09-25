@@ -1,0 +1,22 @@
+Firmware Version: 0x12 = counterfeit chip
+
+
+{"Status":"0","UID":" 2C 9C 0F 32", "IO":"0"}
+
+{"Status":"0","UID":" 2C 9C 0F 32", "IO":"1"}
+
+
+{"Status":"0","UID":" B0 EE A0 79", "IO":"1"}
+
+{"Status":"0","UID":" 2C 9C 0F 32", "IO":"1"}
+
+{"Status":"0","UID":" 2C 9C 0F 32", "IO":"0"}
+
+
+{"Status":"0","UID":" 2C 9C 0F 32", "IO":"0"}
+
+{"Status":"0","UID":" 2C 9C 0F 32", "IO":"0"}
+
+{"Status":"0","UID":" 2C 9C 0F 32", "IO":"0"}
+
+{"Status":"0","UID":" B0 EE A0 79", "IO":"0"}
