@@ -3,7 +3,7 @@
     "configurations": [
         {
             "name": "Win32",
-            "compilerPath": "C:\\Users\\杨宝祥\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\bin\\avr-g++",
+            "compilerPath": "C:\\Users\\spark\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\bin\\avr-g++",
             "compilerArgs": [
                 "-w",
                 "-std=gnu++11",
@@ -16,7 +16,7 @@
             ],
             "intelliSenseMode": "gcc-x64",
             "includePath": [
-                "C:/Users/杨宝祥/Documents/Arduino/libraries/**"
+                "C:/Users/spark/Documents/Arduino/libraries/**"
             ],
             "forcedInclude": [],
             "cStandard": "c11",

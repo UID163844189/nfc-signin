@@ -42,30 +42,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Awesomium.Core.dll" size="209720">
-      <assemblyIdentity name="Awesomium.Core" version="1.6.6.0" publicKeyToken="E1A0D7C8071A5214" language="neutral" processorArchitecture="x86" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>cFCeVCZCJnpNwmMBW5UoiGgjH2nnecwgfLzeIheAwwk=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Awesomium.Windows.Forms.dll" size="406840">
-      <assemblyIdentity name="Awesomium.Windows.Forms" version="1.6.6.0" publicKeyToken="9BD24830FBE304A0" language="neutral" processorArchitecture="x86" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NeS1nVT0DfMCKsX8CimXpJjXvPPrBuug2OOAbm8EyDs=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SerialPortTerminal.exe" size="886784">
       <assemblyIdentity name="SerialPortTerminal" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -73,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bQjyTk7kJC3wWqFdqGMEvo0aSgrK1vewyHF1TBseP00=</dsig:DigestValue>
+        <dsig:DigestValue>ZtsyhSQaJPhn/xpF5ctrwKd8AnlrJv+HMTiY83Lx1g8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

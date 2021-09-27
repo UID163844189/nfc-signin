@@ -346,6 +346,8 @@
             // checkBoxSaveData
             // 
             this.checkBoxSaveData.AutoSize = true;
+            this.checkBoxSaveData.Checked = true;
+            this.checkBoxSaveData.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxSaveData.Location = new System.Drawing.Point(13, 397);
             this.checkBoxSaveData.Name = "checkBoxSaveData";
             this.checkBoxSaveData.Size = new System.Drawing.Size(270, 22);
@@ -359,11 +361,13 @@
             this.textBoxSavingPath.Name = "textBoxSavingPath";
             this.textBoxSavingPath.Size = new System.Drawing.Size(377, 24);
             this.textBoxSavingPath.TabIndex = 9;
-            this.textBoxSavingPath.Text = "recieve.txt";
+            this.textBoxSavingPath.Text = "recieve.csv";
             // 
             // checkBoxDisplayTime
             // 
             this.checkBoxDisplayTime.AutoSize = true;
+            this.checkBoxDisplayTime.Checked = true;
+            this.checkBoxDisplayTime.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxDisplayTime.Location = new System.Drawing.Point(13, 437);
             this.checkBoxDisplayTime.Name = "checkBoxDisplayTime";
             this.checkBoxDisplayTime.Size = new System.Drawing.Size(90, 22);

@@ -1,6 +1,0 @@
-This sample only works with MIFARE Classic cards.
-{"Status":"0","UID":" F0 B4 4A 4E", "IO":"0"}
-2021/09/27 下午 01:50:19 -> {"Status":"0","UID":" 2C 9C 0F 32", "IO":"0"}
-2021/09/27 下午 01:50:23 -> {"Status":"0","UID":" 79 F6 19 E9", "IO":"0"}
-2021/09/27 下午 01:50:36 -> {"Status":"0","UID":" 2C 9C 0F 32", "IO":"1"}
-2021/09/27 下午 01:50:39 -> {"Status":"0","UID":" 79 F6 19 E9", "IO":"1"}

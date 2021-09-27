@@ -17,11 +17,11 @@
 //#include <stdio.h>
 #define RST_Pin 9  // NFC模块上RST引脚
 #define SDA_Pin 10 // NFC模块上SDA引脚
-#define beep 3 // 蜂鸣器
-#define SIn 2 // 进入的按钮
-#define SOut 4 // 出去的按钮
-#define DIn 5 // 进去的灯
-#define DOut 6 // 出去的灯
+#define beep 3	   // 蜂鸣器
+#define SIn 2	   // 进入的按钮
+#define SOut 4	   // 出去的按钮
+#define DIn 5	   // 进去的灯
+#define DOut 6	   // 出去的灯
 byte IOStat;
 MFRC522 mfrc522(SDA_Pin, RST_Pin); // new一个MFRC522的实例mfrc522
 MFRC522::MIFARE_Key key;		   // 卡中的内容，作为缓存（？）
@@ -61,7 +61,6 @@ void NfcStart()
 	analogWrite(beep, 255);
 	delay(100);
 	analogWrite(beep, 0);
-
 }
 
 void NfcStop()
@@ -103,7 +102,6 @@ void loop()
 	}
 
 	NFCBatch();
-	
 }
 
 void NFCBatch()
@@ -119,7 +117,7 @@ void NFCBatch()
 
 	while (!mfrc522.PICC_IsNewCardPresent())
 		return;
-	Serial.println();
+	//Serial.println();
 
 	NfcStart();
 
@@ -207,13 +205,20 @@ void SendInfo()
 		"IO":"0"
 	}
 	*/
-	
+
+	/*
 	Serial.print("{\"Status\":\"0\",\"UID\":\"");
 	dump_byte_array(mfrc522.uid.uidByte, mfrc522.uid.size);
 	Serial.print("\", \"IO\":\"");
 	Serial.print(IOStat);
 	Serial.println("\"}");
+	*/
 
+	// AABB,1,
+	dump_byte_array(mfrc522.uid.uidByte, mfrc522.uid.size);
+	Serial.print(",");
+	Serial.print(IOStat);
+	Serial.println(",");
 }
 
 void WriteCard(byte Block)
