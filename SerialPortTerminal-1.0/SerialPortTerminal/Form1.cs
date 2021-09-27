@@ -100,7 +100,14 @@ namespace SerialPortTerminal
 
 		private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
 		{
-			string ComingData = serialPort.ReadLine() + "\n";
+			string ComingData = string.Empty;
+            if (checkBoxDisplayTime.Checked)
+            {
+			ComingData += System.DateTime.Now.ToString("G");
+			ComingData += " -> ";
+
+            }
+			ComingData += serialPort.ReadLine() + "\n";
 			textBoxReceiver.AppendText(ComingData);
 			if (checkBoxSaveData.Checked)
 				//	SaveData(ComingData);
