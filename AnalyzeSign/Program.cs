@@ -10,7 +10,12 @@ namespace AnalyzeSign
 		Main:
 			Console.WriteLine("Hello World!");
 
-			Console.WriteLine("请选择要从xx开始进行的操作：\n1：清除之前分UID的记录\n2：分UID\n3：计算时间");
+			//Console.WriteLine("请选择要从xx开始进行的操作：\n1：清除之前分UID的记录\n2：分UID\n3：计算时间");
+			Console.WriteLine("请选择要从 xx 开始进行的操作：");
+			Console.WriteLine("1：清除之前分 UID 的记录");
+			Console.WriteLine("2：分 UID");
+			Console.WriteLine("3：UID 转名字");
+			Console.WriteLine("4：计算时间");
 
 			string choose = Console.ReadLine();
 			if (choose == string.Empty)
@@ -31,11 +36,19 @@ namespace AnalyzeSign
 					Console.WriteLine("请输入日志文件的目录，默认recieve.csv");
 					string IncomingString = Console.ReadLine();
 					if (IncomingString != string.Empty)
-						RecordFilePath = IncomingString;
+						UidFilePath = IncomingString;
 					SplitUID();
 					Console.WriteLine("完成！");
 					goto case 3;
 				case 3:
+					Console.WriteLine("把 UID 转成名字");
+					Console.WriteLine("请输入人员名字文件，默认uidtag.csv");
+					IncomingString = Console.ReadLine();
+					if (IncomingString != string.Empty)
+						RecordFilePath = IncomingString;
+					UID2Name();
+					goto case 4;
+				case 4:
 					Calculate();
 					break;
 			}
@@ -43,6 +56,27 @@ namespace AnalyzeSign
 		}
 
 		static string RecordFilePath = "recieve.csv";
+		static string UidFilePath = "uidtag.csv";
+
+		static void UID2Name()
+		{
+			if (!File.Exists(UidFilePath))
+				File.Create(UidFilePath).Close();
+			string[] UidTag = File.ReadAllLines(UidFilePath);
+			string[,] UidTable = new string[2, UidTag.Length];
+
+			for (int i = 0; i < UidTag.Length; i++)
+			{
+				UidTable[0, i] = UidTag[i].Split(",")[0];
+				UidTable[1, i] = UidTag[i].Split(",")[1];
+			}
+
+			for (int i = 0; i < UidTag.Length; i++)
+			{
+				Console.WriteLine(UidTable[0, i] + " -> " + UidTable[1, i]);
+			}
+		}
+
 		static void SplitUID()
 		{
 			Console.WriteLine("1");
@@ -74,6 +108,7 @@ namespace AnalyzeSign
 				dir.Delete(true);
 			}
 		}
+
 		static void Calculate()
 		{
 			Console.WriteLine("2");
