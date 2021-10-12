@@ -1,7 +1,3 @@
-C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\AnalyzeSign.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\AnalyzeSign.AssemblyInfoInputs.cache
-C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\AnalyzeSign.AssemblyInfo.cs
-C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\AnalyzeSign.csproj.CoreCompileInputs.cache
 C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\bin\Debug\net5.0\AnalyzeSign.exe
 C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\bin\Debug\net5.0\AnalyzeSign.deps.json
 C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\bin\Debug\net5.0\AnalyzeSign.runtimeconfig.json
@@ -9,8 +5,11 @@ C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\bin\Debug\net5.0\AnalyzeSign.
 C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\bin\Debug\net5.0\AnalyzeSign.dll
 C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\bin\Debug\net5.0\ref\AnalyzeSign.dll
 C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\bin\Debug\net5.0\AnalyzeSign.pdb
+C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\AnalyzeSign.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\AnalyzeSign.AssemblyInfoInputs.cache
+C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\AnalyzeSign.AssemblyInfo.cs
+C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\AnalyzeSign.csproj.CoreCompileInputs.cache
 C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\AnalyzeSign.dll
 C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\ref\AnalyzeSign.dll
 C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\AnalyzeSign.pdb
 C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\AnalyzeSign.genruntimeconfig.cache
-C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\AnalyzeSign.csproj.AssemblyReference.cache

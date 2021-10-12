@@ -29,7 +29,7 @@ namespace AnalyzeSign
 				case 1:
 					Console.WriteLine("清除之前分UID的记录");
 					ClearCache();
-					Console.WriteLine("完成！");
+					Console.WriteLine("完成！\n");
 					goto case 2;
 				case 2:
 					Console.WriteLine("分UID");
@@ -38,7 +38,7 @@ namespace AnalyzeSign
 					if (IncomingString != string.Empty)
 						UidFilePath = IncomingString;
 					SplitUID();
-					Console.WriteLine("完成！");
+					Console.WriteLine("完成！\n");
 					goto case 3;
 				case 3:
 					Console.WriteLine("把 UID 转成名字");
@@ -47,11 +47,14 @@ namespace AnalyzeSign
 					if (IncomingString != string.Empty)
 						RecordFilePath = IncomingString;
 					UID2Name();
+					Console.WriteLine("完成！\n");
 					goto case 4;
 				case 4:
 					Calculate();
+					Console.WriteLine("完成！\n");
 					break;
 			}
+			Console.ReadLine();
 			goto Main;
 		}
 
@@ -71,16 +74,33 @@ namespace AnalyzeSign
 				UidTable[1, i] = UidTag[i].Split(",")[1];
 			}
 
-			for (int i = 0; i < UidTag.Length; i++)
+			if (!Directory.Exists("csv"))
+				Directory.CreateDirectory("csv");
+
+			string[] Files = Directory.GetFiles("csv");
+			foreach (string RecordFilePath in Files)
 			{
-				Console.WriteLine(UidTable[0, i] + " -> " + UidTable[1, i]);
+				for (int i = 0; i < UidTag.Length; i++) // 
+				{
+					Console.WriteLine(UidTable[0, i] + " -> " + UidTable[1, i]); // 显示对应关系
+
+					int index = RecordFilePath.IndexOf(UidTable[0, i]);
+					if (index != -1)
+					{
+						string NewFileName = RecordFilePath.Split(UidTable[0, i])[0];
+						NewFileName += UidTable[1, i];
+						NewFileName += RecordFilePath.Split(UidTable[0, i])[1];
+
+						Console.WriteLine(RecordFilePath + " -> " + NewFileName);
+						File.Move(RecordFilePath, NewFileName);
+					}
+				}
 			}
+
 		}
 
 		static void SplitUID()
 		{
-			Console.WriteLine("1");
-
 			if (!Directory.Exists("csv"))
 				Directory.CreateDirectory("csv");
 
@@ -111,8 +131,6 @@ namespace AnalyzeSign
 
 		static void Calculate()
 		{
-			Console.WriteLine("2");
-
 			if (!Directory.Exists("csv"))
 				Directory.CreateDirectory("csv");
 
@@ -125,7 +143,7 @@ namespace AnalyzeSign
 				{
 					if (Record[i].Split(",")[1] != "1")
 					{
-						i++;
+						//i++;
 						continue;
 					}
 
@@ -145,7 +163,7 @@ namespace AnalyzeSign
 					int EndTime = Int32.Parse(Record[i].Split(",")[2]);
 					Time += EndTime - StartTime;
 				}
-				Console.WriteLine(RecordFilePath.Split("\\")[1] + "中记录的时间：" + Time.ToString());
+				Console.WriteLine(RecordFilePath.Split("\\")[1] + " 中记录的时间：" + Time.ToString());
 			}
 		}
 	}
