@@ -10,23 +10,32 @@ namespace AnalyzeSign
 		Main:
 			Console.WriteLine("Hello World!");
 
-			Console.WriteLine("请选择要从xx开始进行的操作：\n1：分UID\n2：计算时间");
+			Console.WriteLine("请选择要从xx开始进行的操作：\n1：清除之前分UID的记录\n2：分UID\n3：计算时间");
 
-			int choose = int.Parse(Console.ReadLine());
+			string choose = Console.ReadLine();
+			if (choose == string.Empty)
+			{
+				choose = "0";
+			}
 
-
-			switch (choose)
+			switch (int.Parse(choose))
 			{
 				default:
 				case 1:
+					Console.WriteLine("清除之前分UID的记录");
+					ClearCache();
+					Console.WriteLine("完成！");
+					goto case 2;
+				case 2:
+					Console.WriteLine("分UID");
 					Console.WriteLine("请输入日志文件的目录，默认recieve.csv");
 					string IncomingString = Console.ReadLine();
 					if (IncomingString != string.Empty)
 						RecordFilePath = IncomingString;
 					SplitUID();
-					Calculate();
-					break;
-				case 2:
+					Console.WriteLine("完成！");
+					goto case 3;
+				case 3:
 					Calculate();
 					break;
 			}
@@ -56,6 +65,15 @@ namespace AnalyzeSign
 			}
 
 		}
+
+		static void ClearCache()
+		{
+			if (Directory.Exists("csv"))
+			{
+				DirectoryInfo dir = new DirectoryInfo("csv");
+				dir.Delete(true);
+			}
+		}
 		static void Calculate()
 		{
 			Console.WriteLine("2");
@@ -79,12 +97,12 @@ namespace AnalyzeSign
 				GetRecord:
 					int StartTime = Int32.Parse(Record[i].Split(",")[2]);
 					i++;
-                    //为了防止某些人刷进不刷出
-                    //特此做防止异常的结构
-                    if (i>=Record.Length)
-                    {
+					//为了防止某些人刷进不刷出
+					//特此做防止异常的结构
+					if (i >= Record.Length)
+					{
 						break;
-                    }
+					}
 					if (Record[i].Split(",")[1] != "0")
 					{
 						goto GetRecord;
@@ -92,7 +110,7 @@ namespace AnalyzeSign
 					int EndTime = Int32.Parse(Record[i].Split(",")[2]);
 					Time += EndTime - StartTime;
 				}
-				Console.WriteLine(RecordFilePath.Split("\\")[1]+"中记录的时间："+ Time.ToString());
+				Console.WriteLine(RecordFilePath.Split("\\")[1] + "中记录的时间：" + Time.ToString());
 			}
 		}
 	}
