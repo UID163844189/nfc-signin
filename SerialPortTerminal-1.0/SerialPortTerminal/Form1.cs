@@ -104,6 +104,10 @@ namespace SerialPortTerminal
 			ComingData += serialPort.ReadLine();
 			if (checkBoxDisplayTime.Checked)
 			{
+				if (ComingData.EndsWith("\n"))
+					ComingData = ComingData.Substring(0, ComingData.Length - 1);
+				if (ComingData.EndsWith("\r"))
+					ComingData = ComingData.Substring(0, ComingData.Length - 1);
 				ComingData += new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
 				ComingData += ",";
 

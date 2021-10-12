@@ -22,6 +22,9 @@
 #define SOut 4	   // 出去的按钮
 #define DIn 5	   // 进去的灯
 #define DOut 6	   // 出去的灯
+
+#define CardCS 8   // TF卡的CS引脚
+#define NFCSS 10   // NFC的SDA引脚
 byte IOStat;
 MFRC522 mfrc522(SDA_Pin, RST_Pin); // new一个MFRC522的实例mfrc522
 MFRC522::MIFARE_Key key;		   // 卡中的内容，作为缓存（？）
@@ -31,6 +34,8 @@ void setup()
 {
 	Serial.begin(115200);
 	pinMode(beep, OUTPUT);
+	pinMode(CardCS, OUTPUT);
+	pinMode(NFCSS, OUTPUT);
 	while (!Serial)
 		; // 如果没有打开串口就什么都不做(基于ATMEGA32U4 arduino添加)
 
@@ -72,7 +77,7 @@ void NfcEnd()
 
 void NfcStop()
 {
-	analogWrite(beep, 192);
+	analogWrite(beep, 255);
 	delay(500);
 	analogWrite(beep, 0);
 }
@@ -108,7 +113,11 @@ void loop()
 		IOStat = 0;
 	}
 
+	//digitalWrite(CardCS, 1);
+	digitalWrite(NFCSS, 0);
 	NFCBatch();
+	digitalWrite(NFCSS, 1);
+	//digitalWrite(CardCS, 0);
 }
 
 void NFCBatch()
@@ -126,7 +135,7 @@ void NFCBatch()
 		return;
 	//Serial.println();
 
-	NfcStart();
+	//NfcStart();
 
 	// 选择一个卡
 	if (!mfrc522.PICC_ReadCardSerial())
@@ -179,7 +188,7 @@ void NFCBatch()
 
 	//char cmd = Serial.read();
 	int cmd = 4;
-	delay(500);
+	//delay(500);
 	//Serial.print("your cmd is ");
 	//Serial.println(cmd);
 	//NfcStart();

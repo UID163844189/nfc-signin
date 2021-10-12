@@ -13,3 +13,4 @@ C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\AnalyzeSign.
 C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\ref\AnalyzeSign.dll
 C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\AnalyzeSign.pdb
 C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\AnalyzeSign.genruntimeconfig.cache
+C:\Users\spark\source\repos\nfc-signin\AnalyzeSign\obj\Debug\net5.0\AnalyzeSign.csproj.AssemblyReference.cache
