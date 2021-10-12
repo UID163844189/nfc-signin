@@ -72,7 +72,7 @@ void NfcEnd()
 
 void NfcStop()
 {
-	analogWrite(beep, 192);
+	analogWrite(beep, 255);
 	delay(500);
 	analogWrite(beep, 0);
 }
@@ -126,7 +126,7 @@ void NFCBatch()
 		return;
 	//Serial.println();
 
-	NfcStart();
+	//NfcStart();
 
 	// 选择一个卡
 	if (!mfrc522.PICC_ReadCardSerial())
@@ -179,7 +179,7 @@ void NFCBatch()
 
 	//char cmd = Serial.read();
 	int cmd = 4;
-	delay(500);
+	//delay(500);
 	//Serial.print("your cmd is ");
 	//Serial.println(cmd);
 	//NfcStart();
