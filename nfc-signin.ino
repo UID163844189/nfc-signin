@@ -138,7 +138,7 @@ void NFCBatch()
 	if (piccType != MFRC522::PICC_TYPE_MIFARE_MINI && piccType != MFRC522::PICC_TYPE_MIFARE_1K && piccType != MFRC522::PICC_TYPE_MIFARE_4K)
 	{
 		//Serial.println(F("This sample only works with MIFARE Classic cards."));
-		return;
+		//return;
 	}
 
 	//Serial.println("please select: ");
@@ -293,15 +293,6 @@ void ReadCard()
 	Serial.println();
 }
 
-void SimulateCard() {}
-
-/*public static byte[] charToByte(char c)
-{
-	byte[] b = new byte[2];
-	b[0] = (byte)((c & 0xFF00) >> 8);
-	b[1] = (byte)(c & 0xFF);
-	return b;
-}*/
 
 void dump_byte_array(byte *buffer, byte bufferSize)
 {

@@ -102,15 +102,14 @@ namespace SerialPortTerminal
 		{
 			string ComingData = string.Empty;
 			ComingData += serialPort.ReadLine();
+			if (ComingData.EndsWith("\n"))
+				ComingData = ComingData.Substring(0, ComingData.Length - 1);
+			if (ComingData.EndsWith("\r"))
+				ComingData = ComingData.Substring(0, ComingData.Length - 1);
 			if (checkBoxDisplayTime.Checked)
 			{
-				if (ComingData.EndsWith("\n"))
-					ComingData = ComingData.Substring(0, ComingData.Length - 1);
-				if (ComingData.EndsWith("\r"))
-					ComingData = ComingData.Substring(0, ComingData.Length - 1);
 				ComingData += new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
 				ComingData += ",";
-
 			}
 			ComingData += "\r\n";
 			textBoxReceiver.AppendText(ComingData);
