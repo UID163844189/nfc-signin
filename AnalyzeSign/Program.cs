@@ -104,21 +104,58 @@ namespace AnalyzeSign
 			if (!Directory.Exists("csv"))
 				Directory.CreateDirectory("csv");
 
-			string[] Records = File.ReadAllLines(RecordFilePath);
+            string[] Records = File.ReadAllLines(RecordFilePath);
+            int Length = Records.Length;
+            Console.WriteLine();
+            int ProcessPerChar = Length / 50; // 每一个等号代表的处理量
+            int DisplayedChar = -1; // 已经显示的等号
 
-			foreach (string ThisRecord in Records)
-			{
-				string UID = ThisRecord.Split(",")[0];
-				Console.WriteLine("uid: " + UID);
-				//Console.ReadLine();
-				if (!File.Exists(@"csv\" + UID + ".csv"))
-					File.Create(@"csv\" + UID + ".csv").Close();
-				string AlreadyContent = File.ReadAllText(@"csv\" + UID + ".csv");
-				string Content = AlreadyContent + ThisRecord + "\n";
-				File.WriteAllText(@"csv\" + UID + ".csv", Content);
-			}
+            for (int i = 0; i < Length; i++)
+            {
+                string ThisRecord = Records[i];
+                if (i / ProcessPerChar != DisplayedChar)
+                {
+                    Console.Write("\r");
+                    Console.Write("[");
+                    for (int j = 0; j < i / ProcessPerChar; j++)
+                    {
+                        Console.Write("=");
+                    }
+                    Console.Write(">");
+                    for (int j = 0; j < 50 - i / ProcessPerChar; j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.Write("]");
+                    DisplayedChar = i / ProcessPerChar;
+                }
+                if (ThisRecord.StartsWith("\r?\n"))
+                {
+                    continue;
+                }
+                string UID = ThisRecord.Split(",")[0];
+                //Console.WriteLine("uid: " + UID);
+                //Console.ReadLine();
+                if (!File.Exists(@"csv\" + UID + ".csv"))
+                    File.Create(@"csv\" + UID + ".csv").Close();
+                string AlreadyContent = File.ReadAllText(@"csv\" + UID + ".csv");
+                string Content = AlreadyContent + ThisRecord + "\n";
+                File.WriteAllText(@"csv\" + UID + ".csv", Content);
 
-		}
+            }
+
+            //foreach (string ThisRecord in Records)
+            //{
+            //    string UID = ThisRecord.Split(",")[0];
+            //    Console.WriteLine("uid: " + UID);
+            //    if (!File.Exists(@"csv\" + UID + ".csv"))
+            //        File.Create(@"csv\" + UID + ".csv").Close();
+            //    string AlreadyContent = File.ReadAllText(@"csv\" + UID + ".csv");
+            //    string Content = AlreadyContent + ThisRecord + "\n";
+            //    File.WriteAllText(@"csv\" + UID + ".csv", Content);
+            //}
+
+        }
 
 		static void ClearCache()
 		{
