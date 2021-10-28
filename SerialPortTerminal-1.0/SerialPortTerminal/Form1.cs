@@ -116,6 +116,33 @@ namespace SerialPortTerminal
 			if (checkBoxSaveData.Checked)
 				//	SaveData(ComingData);
 				SaveData(textBoxReceiver.Text);
+			CheckWhoIs(ComingData.Split(',')[0]);
+		}
+
+		void CheckWhoIs(string UID)
+		{
+			if (!File.Exists("AuzorizedUid.txt"))
+			{
+				File.Create("AuzorizedUid.txt").Close();
+			}
+			string AuzorizedUid = File.ReadAllText("AuzorizedUid.txt");
+
+			if (AuzorizedUid.IndexOf(UID) != -1)
+			{
+				if (buttonSend.Text == "打开")
+				{
+					radioButtonOpen.PerformClick();
+				}
+				else if (true)
+				{
+					serialPort.WriteLine(">OpenDoor");
+				}
+				else
+				{
+					serialPort.Write(textBoxSender.Text);
+				}
+
+			}
 		}
 
 		private void textBoxReceiver_TextChanged(object sender, EventArgs e)

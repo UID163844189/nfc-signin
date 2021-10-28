@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SerialPortTerminal.exe" size="886784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SerialPortTerminal.exe" size="887296">
       <assemblyIdentity name="SerialPortTerminal" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WPgACgDDe5ouyCU0pQ75P9DXf6XOnlLZZULvxeSOOSw=</dsig:DigestValue>
+        <dsig:DigestValue>WYWHUg6YfQTlutaKtmt/ZUdNHzwKcU03xzLz8Q3XCDE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -109,6 +109,11 @@ void loop()
 	}
 
 	NFCBatch();
+	String Coming = Serial.readStringUntil("\n");
+	if (Coming.startsWith(">Open"))
+	{
+		Serial.println(">>Open the door");
+	}
 }
 
 void NFCBatch()
